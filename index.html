@@ -7,26 +7,31 @@
  -->	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<header class="border-bottom box-shadow">
-		<h1 class="float-left">Logo</h1>
-		<nav class="navbar navbar-expand-lg navbar-light float-left">
-			<div class="dropdown">
-			  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			    Categories
-			  </button>
-			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			    <a class="dropdown-item" href="#">Albums</a>
-			    <a class="dropdown-item" href="#">Books</a>
-			    <a class="dropdown-item" href="#">Movies</a>
-			  </div>
-			</div>
-		</nav>
-		<nav class="navbar navbar-light bg-light">
-		  <form class="form-inline">
-		    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-		    <button class="btn btn-outline-dark my-2 my-sm-0 p-1" type="submit"><img src="images/search-icon.png" width="30" height="23"></button>
-		  </form>
-		</nav>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="#">Navbar</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item active">
+			    <a class="nav-link" href="#">Movies</a>
+			  </li>
+			  <li class="nav-item active">
+			    <a class="nav-link" href="#">Books</a>
+			  </li>
+			  <li class="nav-item active">
+			    <a class="nav-link" href="#">Albums</a>
+			  </li>
+			</ul>
+		  </div>
+		  <nav class="navbar navbar-light bg-light">
+			  <form class="form-inline">
+			    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			  </form>
+			</nav>
 	</header>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/popper.min.js"></script>
