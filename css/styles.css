@@ -1,6 +1,18 @@
 .float-left{
 	float: left;
 }
+
 .float-right{
 	float: right;
+}
+
+.displayin{
+	display: inline-block;
+}
+
+header a p{
+	margin: 0;
+}
+.margin-middle{
+	margin-left: 80;
 }
