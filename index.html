@@ -8,34 +8,59 @@
 </head>
 <body>
 	<header>
-		<div class="clearfix bg-light">
-			<nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-light displayin float-left">
-			  <a class="navbar-brand text-secondary" href="#">Logo</a>
-			</nav>
-			<nav class="navbar navbar-light float-left">
-			  <form class="form-inline">
-			    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-			    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-			  </form>
-			</nav>
-			<div class="dropdown show float-right">
-			  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			    My Account
-			  </a>
-			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-			    <a class="dropdown-item" href="#">Profile</a>
-			    <a class="dropdown-item" href="#">Settings</a>
-			    <a class="dropdown-item" href="#">Sign Out</a>
-			  </div>
-			  <a href="" class="float-right">
-			  	<img src="images/shopping-card.png" width="25" height="25">
-			  <!-- 	<img src="images/shopping-card.png" width="3" height="3"> -->
-			  </a>
-			  <a href="" class="float-right bg-light">
-			  	<p>My Cart</p>
-			  	<p>$</p>
-			  </a>
-			</div>
+		<div class="fixed-top">
+			<nav class="navbar navbar-light bg-light navbar-expand-lg justify-content-between py-0">
+				<a class="navbar-brand text-secondary px-5 mb-0 h1" href="#">Logo</a>
+				<div class="navbar navbar-expand-lg">
+					<div class="px-5">
+						<div class="dropdown show">
+						  <a class="btn btn-secondary dropdown-toggle btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    My Account
+						  </a>
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						    <a class="dropdown-item" href="#">Profile</a>
+						    <a class="dropdown-item" href="#">Settings</a>
+						    <a class="dropdown-item" href="#">Sign Out</a>
+						  </div>
+						</div>
+						<div class="dropdown">
+							<a class="btn btn-light btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Sign in / Join
+						  	</a>
+							<div class="dropdown-menu">
+							  <form class="px-4 py-3">
+							    <div class="form-group">
+							      <label for="exampleDropdownFormEmail1">Email address</label>
+							      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+							    </div>
+							    <div class="form-group">
+							      <label for="exampleDropdownFormPassword1">Password</label>
+							      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+							    </div>
+							    <div class="form-check">
+							      <input type="checkbox" class="form-check-input" id="dropdownCheck">
+							      <label class="form-check-label" for="dropdownCheck">
+							        Remember me
+							      </label>
+							    </div>
+							    <button type="submit" class="btn btn-primary">Sign in</button>
+							  </form>
+							  <div class="dropdown-divider"></div>
+							  <a class="dropdown-item" href="#">New around here? Sign up</a>
+							  <a class="dropdown-item" href="#">Forgot password?</a>
+							</div>
+						</div>
+					</div>
+					<a href="" class="cart-img">
+					  <img src="images/shopping-card.png" width="37px" height="34px">
+					  <span class="badge badge-light cart-number">0</span>
+					</a>
+					<a href="#" class="px-5">
+					  <p>My Cart</p>
+					  <p class="text-center">$</p>
+					</a>
+				</div>
+			</nav><!-- we need to add margin to the below nav-->
 		</div>
 		<ul class="nav justify-content-center" style="background-color: #2D353B;">
 		  <li class="nav-item">

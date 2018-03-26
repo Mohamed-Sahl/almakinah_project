@@ -14,5 +14,18 @@ header a p{
 	margin: 0;
 }
 .margin-middle{
-	margin-left: 80;
+	margin-left: 477px;
+}
+.cart-img{
+	position: relative;
+}
+
+.cart-number{
+/*	width: 7px;
+	height: 10px;*/
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: orange;
+	background-size: contain;
 }
