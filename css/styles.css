@@ -26,7 +26,7 @@ header a p{
 	position: absolute;
 	right: 0;
 	top: 0;
-	background-color: orange;
+	background-color: #3A6BFE;
 	background-size: contain;
 }
 
@@ -36,4 +36,9 @@ header a p{
 
 .sign-noshadow:focus {
 	box-shadow: 0 0 0 0;
+}
+
+.color-theme {
+	background-color: #3A6BFE;
+	color: white;
 }
