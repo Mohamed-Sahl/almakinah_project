@@ -54,8 +54,9 @@
 					  <img src="images/shopping-card.png" width="37px" height="34px">
 					  <span class="badge badge-light cart-number">0</span>
 					</a>
-					<button type="button" class="btn color-theme mx-1">
-					  My Cart <a href="#" class="badge badge-light">1050LE</a>
+					<button type="button" class="btn color-theme mx-3">
+					  My Cart 
+					  <div><a href="#" class="badge badge-light">1050LE</a></div>
 					</button>
 				</div>
 			</nav>
@@ -65,20 +66,15 @@
 				<div class="row justify-content-center">
 					<div class="col">
 						<nav class="navbar justify-content-center">
-							<div class="btn-group mr-5">
-							    <button class="btn btn-lg dropdown-toggle color-theme" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							      Categorize
-							    </button>
-							    <div class="dropdown-menu">
-							      <a class="dropdown-item dropdown-menu-right" href="#">Books</a>
-								  <div class="dropdown-divider"></div>
-								  <a class="dropdown-item dropdown-menu-right" href="#">Movies</a>
-								  <div class="dropdown-divider"></div>
-								  <a class="dropdown-item dropdown-menu-right" href="#">Albums</a>
-							    </div>
-							 </div>
-						  	<form class="form-inline">
-							    <input class="form-control border rounded-0 " type="search" placeholder="Search" aria-label="Search">
+							<select id="user-select" class="custom-select color-theme border rounded-0">
+								<option disabled selected>Please choose a Category</option>		
+									<option value="categ">All Categories</option>
+									<option value="books">Books</option>
+									<option value="movies">Movies</option>
+									<option value="albums">Albums</option>
+							</select>
+						  	<form id="search" class="form-inline">
+							    <input id="search-input" class="form-control border rounded-0 " type="search" placeholder="Search" aria-label="Search">
 							    <button class="btn btn-dark btn-outline-secondary btn-sm my-2 my-sm-0" type="submit"><a href=""><img src="images/search-icon-white.png" width="30px"></a></button>
 						  	</form>
 						</nav>
