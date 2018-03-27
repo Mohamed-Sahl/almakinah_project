@@ -88,11 +88,14 @@
 		</div>
 	</header>
 	<body>
-		<div class="container	my-5">
-			<div class="row">
+		<div class="container my-5">
+			<div class="row justify-content-around">
 				<div class="col-6">
 					<form>
 					  <p>Already a customer? <a href="#">Login</a></p>
+					  <div class="section-title">
+						<h2 class="title">Billing Details</h2>
+					  </div>
 					  <div class="form-row">
 					    <div class="form-group col-3">
 					      <label for="firstName">First Name</label>
@@ -107,10 +110,10 @@
 					      <input type="Name" class="form-control" id="lastName" placeholder="Last Name">
 					    </div>
 					  </div>
-					  <div class="form-group">
+					  <div class="form-group ml-1">
 					    <label for="inputMobile">Mobile Number</label>
 				    	<div class="form-row">
-					    	<select name="Mobile" id="inputMobile" class="form-control col-1">
+					    	<select name="Mobile" id="inputMobile" class="form-control col-2">
 						        <option selected="true" disabled>01x</option>
 						        <option value="010">010</option>
 						        <option value="011">011</option>
@@ -126,7 +129,7 @@
 					  </div>
 					  <div class="form-group">
 					    <label for="inputAddress2">Address 2 (Optional)</label>
-					    <input type="text" class="form-control col-8" id="inputAddress2" placeholder="Apartment, work, or studio">
+					    <input type="text" class="form-control col-8" id="inputAddress2" placeholder="Apartment wife#2, work, or studio">
 					  </div>
 					  <div class="form-row">
 					    <div class="form-group col-4">
@@ -157,32 +160,31 @@
 					      </select>
 					    </div>
 					  </div>
-					<button type="submit" class="btn btn-primary">Check Me Out</button>
 					</form>
 				</div>
-				<div class="col-6">
-					<div class="col-md-6 border border-top-0 border-right-0 border-bottom-0 ml-5">
+				<div class="col-5 my-5">
+					<div class="col-md-6 border border-top-0 border-right-0 border-bottom-0 mx-5">
 						<div class="shiping-methods">
-							<div class="section-title">
+							<div class="section-title border border-top-0 border-right-0 border-left-0">
 								<h4 class="title">Shipping Methods</h4>
 							</div>
 								<div class="input-checkbox">
 									<input type="radio" name="shipping" id="shipping-1" checked="">
-									<label for="shipping-1">Free Shiping -  $0.00</label>
+									<label for="shipping-1">Free Shipping - 0.00 EGP</label>
 									<div class="caption">
 										<p>ببلاش يا باشا</p>
 									</div>
 							</div>
 							<div class="input-checkbox">
 								<input type="radio" name="shipping" id="shipping-2">
-								<label for="shipping-2">Standard - $4.00</label>
+								<label for="shipping-2">Standard - 30.00 EGP</label>
 								<div class="caption">
 									<p>بسرعه جدا يا باشا</p>
 								</div>
 							</div>
 						</div>
 						<div class="payments-methods">
-							<div class="section-title">
+							<div class="section-title border border-top-0 border-right-0 border-left-0">
 								<h4 class="title">Payments Methods</h4>
 							</div>
 							<div class="input-checkbox">
@@ -206,7 +208,7 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-12 mb-5">
+				<div class="col-12 mb-5 ml-3">
 					<div class="order-summary clearfix">
 						<div class="section-title">
 							<h3 class="title">Order Review</h3>
@@ -214,8 +216,7 @@
 						<table class="shopping-cart-table table">
 							<thead>
 								<tr>
-									<th>Product</th>
-									<th></th>
+									<th class="text-center" colspan=2>Product</th>
 									<th class="text-center">Price</th>
 									<th class="text-center">Quantity</th>
 									<th class="text-center">Total</th>
