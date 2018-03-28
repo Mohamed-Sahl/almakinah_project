@@ -72,56 +72,76 @@ var movies = [
 ];
 
 
+
 $(window).on('load', function(){
 	addToPage();
 });
 
+
+// This function was a result of long hours of work and my explanations
+// could sound confusing, will try to make it clear as much as possible:
+// I've removed the whole bootstrap col and card HTML tags
+// from the rows to empty the content area, and then implemented 
+// them into the addToPage function which runs as soon as the page
+// loads. This function main propose is add the relevant card details
+// by looping through the arrays of objects of the categories.
+// I've made a for loop for every category. assigned the var cardContent.
+// appended the content to the row which i gave an id depends on the
+// category. 
 function addToPage(){
 	for (var i = 0; i < books.length; i++) {
+		var cardContentBooks ='	<div class="col-4">\
+									<div id="'+i+'" class="card p-4 border-0 text-center product" style="width: 18rem;">\
+										<img class="card-img-top img"  alt="Card image cap"> \
+									  	<div class="card-body"> \
+										    <h5 class="card-title name"></h5> \
+										    <p class="card-text category"></p> \
+										    <a href="details.html" class="btn btn-primary price"></a> \
+									  	</div>\
+									</div>\
+								</div>'
+		$('#books').append(cardContentBooks);
+		$('#'+[i]).attr("id","book-"+[i+1]);
+		$('#book-'+[i+1]).addClass('book');
 		$('#book-'+[i+1]+' .name').text(books[i].name);
 		$('#book-'+[i+1]+' .img').attr("src",books[i].picture_url);
 	}
 	for (var j = 0; j < albums.length; j++) {
+		var cardContentAlbums ='	<div class="col-4">\
+									<div id="'+j+'" class="card p-4 border-0 text-center product" style="width: 18rem;">\
+										<img class="card-img-top img"  alt="Card image cap"> \
+									  	<div class="card-body"> \
+										    <h5 class="card-title name"></h5> \
+										    <p class="card-text category"></p> \
+										    <a href="details.html" class="btn btn-primary price"></a> \
+									  	</div>\
+									</div>\
+								</div>'
+		$('#albums').append(cardContentAlbums);
+		$('#'+[j]).attr("id","album-"+[j+1]);
+		$('#album-'+[j+1]).addClass('album');
 		$('#album-'+[j+1]+' .name').text(albums[j].name);
 		$('#album-'+[j+1]+' .img').attr("src",albums[j].picture_url);
 	}
 	for (var k = 0; k < movies.length; k++) {
+		var cardContentMovies ='	<div class="col-4">\
+									<div id="'+k+'" class="card p-4 border-0 text-center product" style="width: 18rem;">\
+										<img class="card-img-top img"  alt="Card image cap"> \
+									  	<div class="card-body"> \
+										    <h5 class="card-title name"></h5> \
+										    <p class="card-text category"></p> \
+										    <a href="details.html" class="btn btn-primary price"></a> \
+									  	</div>\
+									</div>\
+								</div>'
+		$('#movies').append(cardContentMovies);
+		$('#'+[k]).attr("id","movie-"+[k+1]);
+		$('#movie-'+[k+1]).addClass('movie');
 		$('#movie-'+[k+1]+' .name').text(movies[k].name);
 		$('#movie-'+[k+1]+' .img').attr("src",movies[k].picture_url);
-	}
+	}	
 
-};
-
-
-
-
-
-
-
-
-
-
-
-// $(window).on('load', function() {
-// 	for (var i = 0; i < books.length; i++) {
-// 		$('#book-'+[i+1]+' .name').text(books[i].name);
-// 		$('#book-'+[i+1]+' .img').attr("src",books[i].picture_url);
-// 	}
-// 	for (var j = 0; j < books.length; j++) {
-// 		$('#album-'+[j+1]+' .name').text(albums[j].name);
-// 		$('#album-'+[j+1]+' .img').attr("src",albums[j].picture_url);
-// 	}
-// 	for (var k = 0; k < books.length; k++) {
-// 		$('#movie-'+[k+1]+' .name').text(movies[k].name);
-// 		$('#movie-'+[k+1]+' .img').attr("src",movies[k].picture_url);
-// 	}
-
-// });
-
-
-
-
-
+}
 
 // The below code take the input from the search bar input field and assign it
 // to var searchBar.
