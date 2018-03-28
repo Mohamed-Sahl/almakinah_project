@@ -103,7 +103,7 @@ $(function(){
 
 $("#user-select").on('change', function() {
 	//The above jQuery function take the input from the select options 
-	// and return in this.value data type
+	// and return in this.value data type when you select an option
 	// the below if conditions search if there is no options selected (i.e default one selected)
 	if (this.value === "books"){
 		$(function(){
@@ -148,3 +148,4 @@ $("#user-select").on('change', function() {
 	// 	});
 	// }
 });
+
