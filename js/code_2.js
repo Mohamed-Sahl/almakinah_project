@@ -1,83 +1,75 @@
-var books = [
-	{
-	"id": "book_1",
-	"name": "Python",
-	"category":"",
-	"picture_url":"images/python.jpg",
-	"price": 0
-	},
-						{
-						"id": "book_2",
-						"name": "php",
-						"category":"",
-						"picture_url":"images/php.jpg",
-						"price": 0
-						},
-											{
-											"id": "book_3",
-											"name": "JavaScript",
-											"category":"",
-											"picture_url":"images/javascript.jpg",
-											"price": 0
-											}
-];
+var products = {
+	"books" : [
+				{
+				"id": "book_1",
+				"name": "Python",
+				"category":"books",
+				"picture_url":"images/python.jpg",
+				"price": 540,
+				},
+									{
+									"id": "book_2",
+									"name": "php",
+									"category":"books",
+									"picture_url":"images/php.jpg",
+									"price": 850
+									},
 
-
-var albums = [
-	{
-	"id": "album_1",
-	"name": "Metallica",
-	"category":"",
-	"picture_url":"images/metallica.jpg",
-	"price": 0
-	},
-						{
-						"id": "album_2",
-						"name": "Garage Inc",
-						"category":"",
-						"picture_url":"images/garage_inc.jpg",
-						"price": 0
-						},
-											{
-											"id": "album_3",
-											"name": "Hardwired",
-											"category":"",
-											"picture_url":"images/hardwired.jpg",
-											"price": 0
-											}
-];
-
-var movies = [
-	{
-	"id": "movie_1",
-	"name": "Casper",
-	"category":"",
-	"picture_url":"images/casper.jpg",
-	"price": 0
-	},
-						{
-						"id": "movie_2",
-						"name": "The Mask",
-						"category":"",
-						"picture_url":"images/the_mask.jpg",
-						"price": 0
-						},
-											{
-											"id": "movie_3",
-											"name": "Home Alone",
-											"category":"",
-											"picture_url":"images/home_alone.jpg",
-											"price": 0
-											}
-];
-
-
-
-$(window).on('load', function(){
-	addToPage();
-});
-
-
+														{
+														"id": "book_3",
+														"name": "JavaScript",
+														"category":"books",
+														"picture_url":"images/javascript.jpg",
+														"price": 590
+														},
+			],
+	"albums" : [
+				{
+				"id": "album_1",
+				"name": "Metallica",
+				"category":"albums",
+				"picture_url":"images/metallica.jpg",
+				"price": 400
+				},
+									{
+									"id": "album_2",
+									"name": "Garage Inc",
+									"category":"albums",
+									"picture_url":"images/garage_inc.jpg",
+									"price": 400
+									},
+														{
+														"id": "album_3",
+														"name": "Hardwired",
+														"category":"albums",
+														"picture_url":"images/hardwired.jpg",
+														"price": 400
+														}
+			],
+	"movies" : [
+				{
+				"id": "movie_1",
+				"name": "Casper",
+				"category":"movies",
+				"picture_url":"images/casper.jpg",
+				"price": 450
+				},
+									{
+									"id": "movie_2",
+									"name": "The Mask",
+									"category":"movies",
+									"picture_url":"images/the_mask.jpg",
+									"price": 450
+									},
+														{
+														"id": "movie_3",
+														"name": "Home Alone",
+														"category":"movies",
+														"picture_url":"images/home_alone.jpg",
+														"price": 450
+														}
+			]
+}; 
 // This function was a result of long hours of work and my explanations
 // could sound confusing, will try to make it clear as much as possible:
 // I've removed the whole bootstrap col and card HTML tags
@@ -87,62 +79,44 @@ $(window).on('load', function(){
 // by looping through the arrays of objects of the categories.
 // I've made a for loop for every category. assigned the var cardContent.
 // appended the content to the row which i gave an id depends on the
-// category. 
+// category.
+// update: it got even complicated, I've refracted the function
+// to work with the object 'products' without mentioning any of 
+// categories (automated). I've used couple of JS functions to access
+// objects within objects and iterate through its array data type
+// (this was really complicated and i need to research an easier way!!)
+// in HTML i have removed the specific categories under container
+// and made one products div, and the function create the required
+// categories depends on the products object 
+$(window).on('load', function(){
+	addToPage();
+});
 function addToPage(){
-	for (var i = 0; i < books.length; i++) {
-		var cardContentBooks ='	<div class="col-4">\
-									<div id="'+i+'" class="card p-4 border-0 text-center product" style="width: 18rem;">\
-										<img class="card-img-top img"  alt="Card image cap"> \
-									  	<div class="card-body"> \
-										    <h5 class="card-title name"></h5> \
-										    <p class="card-text category"></p> \
-										    <a href="details.html" class="btn btn-primary price"></a> \
-									  	</div>\
-									</div>\
-								</div>'
-		$('#books').append(cardContentBooks);
-		$('#'+[i]).attr("id","book-"+[i+1]);
-		$('#book-'+[i+1]).addClass('book');
-		$('#book-'+[i+1]+' .name').text(books[i].name);
-		$('#book-'+[i+1]+' .img').attr("src",books[i].picture_url);
+	var arr = Object.entries(products);
+	for (var j = 0; j < Object.keys(products).length; j++) {
+		for (var i = 0; i < Object.keys(products).length; i++) {
+			var cardContent='<div class="col-4">\
+								<div id="'+i+'" class="card p-4 border-0 text-center product" style="width: 18rem;">\
+									<img class="card-img-top img"  alt="Card image cap"> \
+								  	<div class="card-body"> \
+									    <h5 class="card-title name"></h5> \
+									    <p class="card-text category"></p> \
+									    <a href="details.html" class="btn btn-primary price"></a> \
+								  	</div>\
+								</div>\
+							 </div>'
+			$('#products').append(cardContent);
+			$('#'+i).attr("id",arr[j][1][i].category+[i+1]);
+			$('#'+arr[j][1][i].category+[i+1]).addClass(arr[j][1][i].category);
+			$('#'+arr[j][1][i].category+[i+1]+' .name').text(arr[j][1][i].name);
+			$('#'+arr[j][1][i].category+[i+1]+' .category').text(arr[j][1][i].category);
+			$('#'+arr[j][1][i].category+[i+1]+' .price').text(arr[j][1][i].price);
+			$('#'+arr[j][1][i].category+[i+1]+' .img').attr('src',arr[j][1][i].picture_url);
+			console.log(arr[j][1][i].picture_url);
+		}
 	}
-	for (var j = 0; j < albums.length; j++) {
-		var cardContentAlbums ='	<div class="col-4">\
-									<div id="'+j+'" class="card p-4 border-0 text-center product" style="width: 18rem;">\
-										<img class="card-img-top img"  alt="Card image cap"> \
-									  	<div class="card-body"> \
-										    <h5 class="card-title name"></h5> \
-										    <p class="card-text category"></p> \
-										    <a href="details.html" class="btn btn-primary price"></a> \
-									  	</div>\
-									</div>\
-								</div>'
-		$('#albums').append(cardContentAlbums);
-		$('#'+[j]).attr("id","album-"+[j+1]);
-		$('#album-'+[j+1]).addClass('album');
-		$('#album-'+[j+1]+' .name').text(albums[j].name);
-		$('#album-'+[j+1]+' .img').attr("src",albums[j].picture_url);
-	}
-	for (var k = 0; k < movies.length; k++) {
-		var cardContentMovies ='	<div class="col-4">\
-									<div id="'+k+'" class="card p-4 border-0 text-center product" style="width: 18rem;">\
-										<img class="card-img-top img"  alt="Card image cap"> \
-									  	<div class="card-body"> \
-										    <h5 class="card-title name"></h5> \
-										    <p class="card-text category"></p> \
-										    <a href="details.html" class="btn btn-primary price"></a> \
-									  	</div>\
-									</div>\
-								</div>'
-		$('#movies').append(cardContentMovies);
-		$('#'+[k]).attr("id","movie-"+[k+1]);
-		$('#movie-'+[k+1]).addClass('movie');
-		$('#movie-'+[k+1]+' .name').text(movies[k].name);
-		$('#movie-'+[k+1]+' .img').attr("src",movies[k].picture_url);
-	}	
 
 }
-
 // The below code take the input from the search bar input field and assign it
 // to var searchBar.
 // in the HTML file inside the form I've added an attr in the button  called 
@@ -205,11 +179,13 @@ var searchFunction = function() {
 	
 };
 
+// This event listen on the dropdown of the categories
+// and show and hide them depends on the user input
 $('#user-select').on('change', function(event) {
 	event.preventDefault();
 	var userSelectOption = event.target.value;
 	if (userSelectOption === "categ") {
-		$("#books").show();
+		$("#books"+1).show();
 		$("#movies").show();
 		$("#albums").show();
 	}
