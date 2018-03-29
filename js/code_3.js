@@ -76,8 +76,6 @@ var movies = [
 var searchBar = document.forms["search-bar"].querySelector("input");
 searchBar.addEventListener('keyup', function(e){
 	var userInput = e.target.value;
-	// a bug in the below for loops is the condition of the i,
-	// which depends only on the length of the books
 	alert("inside");
 	for (var i = 0; i < books.length || i < movies.length || i <albums.length; i++) {
     	if (userInput === books[i].name){

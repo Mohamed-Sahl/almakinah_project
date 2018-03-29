@@ -205,3 +205,27 @@ var searchFunction = function() {
 	
 };
 
+$('#user-select').on('change', function(event) {
+	event.preventDefault();
+	var userSelectOption = event.target.value;
+	if (userSelectOption === "categ") {
+		$("#books").show();
+		$("#movies").show();
+		$("#albums").show();
+	}
+	if (userSelectOption === "books"){
+		$("#books").show();
+		$("#movies").hide();
+		$("#albums").hide();
+	}
+	if (userSelectOption === "movies"){
+		$("#movies").show();
+		$("#books").hide();
+		$("#albums").hide();
+	}
+	if (userSelectOption === "albums"){
+		$("#albums").show();
+		$("#movies").hide();
+		$("#books").hide();
+	}
+});
