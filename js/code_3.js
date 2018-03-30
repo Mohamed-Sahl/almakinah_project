@@ -73,23 +73,87 @@ var movies = [
 
 // the below code monitor the search input by every character the user
 // input and search with its value
-var searchBar = document.forms["search-bar"].querySelector("input");
-searchBar.addEventListener('keyup', function(e){
-	var userInput = e.target.value;
-	alert("inside");
-	for (var i = 0; i < books.length || i < movies.length || i <albums.length; i++) {
-    	if (userInput === books[i].name){
-    		alert("Search found in books from within books value");
-    		return;
+var searchFunction = function() {
+	var searchBar = document.forms["search-bar"].querySelector("input");
+	var userInput = searchBar.value;
+	// below code return the value of the option user selected from the 
+	// drop-down menu
+	var optionSelect = document.getElementById('user-select');
+	var userOption = optionSelect.value;
+	if (userOption === "categ") {
+		for (var i = 0; i < books.length || i < movies.length || i <albums.length; i++) {
+	    	if (userInput === books[i].name){
+	    		alert("Search found in books");
+	    		return;
+	    	}
+	    	else if (userInput === albums[i].name){
+	    		alert("Search found in albums");
+	    		return;
+	    	}
+	    	else if (userInput === movies[i].name) {
+	    		alert("Search found in movies");
+	    		return;
+	    	}
     	}
-    	else if (userInput === albums[i].name){
-    		alert("Search found in books from within albums value");
-    		return;
+	    alert("Your Search was not found");
+	  	return;
+	}
+	else if (userOption === "books") {
+	 	for (var j = 0; j < books.length; j++) {
+	    	if (userInput === books[j].name){
+	    		alert("Search found in books");
+	    		return;
+	    	}
     	}
-    	else if (userInput === movies[i].name) {
-    		alert("Search found in books from within albums value");
-    		return;
+    	alert("Your Search was not found");
+  		return;
+	}
+	else if (userOption === "movies") {
+	 	for (var k = 0; k < movies.length; k++) {
+	    	if (userInput === movies[k].name){
+	    		alert("Search found in movies");
+	    		return;
+	    	}
     	}
-    }
-    alert("Your Search not found");
+    	alert("Your Search was not found");
+	  	return;
+	}
+	else if (userOption === "albums") {
+	 	for (var l = 0; l < albums.length; l++) {
+	    	if (userInput === albums[l].name){
+	    		alert("Search found in albums");
+	    		return;
+	    	}
+    	}
+    	alert("Your Search was not found");
+	  	return;
+	}  
+	
+};
+
+// This event listen on the dropdown of the categories
+// and show and hide them depends on the user input
+$('#user-select').on('change', function(event) {
+	event.preventDefault();
+	var userSelectOption = event.target.value;
+	if (userSelectOption === "categ") {
+		$("#books").show();
+		$("#movies").show();
+		$("#albums").show();
+	}
+	if (userSelectOption === "books"){
+		$("#books").show();
+		$("#movies").hide();
+		$("#albums").hide();
+	}
+	if (userSelectOption === "movies"){
+		$("#movies").show();
+		$("#books").hide();
+		$("#albums").hide();
+	}
+	if (userSelectOption === "albums"){
+		$("#albums").show();
+		$("#movies").hide();
+		$("#books").hide();
+	}
 });

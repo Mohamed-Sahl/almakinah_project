@@ -42,3 +42,7 @@ header a p{
 	background-color: #3A6BFE;
 	color: white;
 }
+
+.capitalize {
+    text-transform: capitalize;   
+  }
